@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-sth
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
